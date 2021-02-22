@@ -7,13 +7,16 @@ Se trello.com (Länkar till en extern sida.)Länkar till en externa sida. för a
 
 Tanken är att du ska applicera det du har lärt dig angående jQuery, jQuery UI i JS och kombinera den kunskapen med tidigare inlärning i JS för att färdigställa denna uppgift.
 
+
 ## Inlämning
 
 Uppgiften ska lämnas in via https://classroom.github.com/a/F8295mmI (Länkar till en externa sida.)Länkar till en externa sida. samt bifogas som länk till uppgiften i LMS.
 
+
 ## Vänligen notera
 
 Observera att du inte bedöms på estetik eller design. Lägg därför minimalt med tid på detta för att hinna klart i tid. Du bedöms endast på koden och implementation av denna.
+
 
 ## Mål
 
@@ -36,6 +39,7 @@ Som användare ska man kunna göra följande:
 - Minst en egenskapad enkel JQuery UI Widget
 - Layout/disposition helt skapad från CSS-ramverk (valfritt)
 
+
 ## Extra utmaning
 
 Om du vill påvisa djupare förståelse och kompetens inom jQuery, jQuery UI och CSS-ramverk kan du även bygga till några eller alla av följande funktioner:
@@ -45,6 +49,7 @@ Om du vill påvisa djupare förståelse och kompetens inom jQuery, jQuery UI och
 - Användaren kan byta färg på korten med en colorpicker
 - Användaren kan arkivera kort så att de hamnar i ett separat arkiv
 - Användaren ska kunna "spara" sitt kanban board, förslagsvis i localStorage eller som en JSON-fil, vilken sedan laddas in vid nästa besök
+
 
 ## Betygsättning
 
@@ -75,10 +80,12 @@ Den här inlämningen ger underlag för följande kursmål. Där inlämningen he
 
 Icke godkänt, Godkänt och Väl godkänt
 
+
 ### Godkänd
 
 För att nå Godkänd som betyg på denna inlämning ska du:
 Den studerande kan tillämpa och utveckla enklare lösningar med JavaScript-biblioteken jQuery och jQuery UI som motsvarar målen och kraven för uppgiften.
+
 
 ### Väl godkänd
 
