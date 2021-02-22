@@ -58,12 +58,11 @@ Den här inlämningen ger underlag för följande kursmål. Där inlämningen he
    - JS 1.7 Lexical scope
    - JS 1.7 Event handling
 
--
-
 2. - Färdigheter
    - HC 2.1 Webbutveckla responsivt och browseranpassat med HTML och CSS enligt aktuella webbstandarder
    - JS 2.1 Utveckla webblösningar med JavaScript
    - JS 2.2 Använda JavaScript-ramverk och -bibliotek
+
 3. Kompetenser
    JS 3.1 Arbeta som Fullstack-webbutvecklare med JavaScript
    Utöver denna inlämning kan det även finnas fler examinationsmoment som ligger till underlag för samma kriterier.
