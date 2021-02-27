@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/chas-academy/u06-trello-clone-jagestedt/issues"
   },
-  "homepage": "https://github.com/chas-academy/u06-trello-clone-jagestedt#readme"
+  "homepage": "https://github.com/chas-academy/u06-trello-clone-jagestedt#readme",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
 }
