@@ -23,7 +23,8 @@ Som användare ska man kunna göra följande:
 - Kunna sätta en deadline på varje kort (datepicker)
 - ##Krav
 
-- Den färdiga lösningen måste implementera:
+## Den färdiga lösningen måste implementera:
+
 - JQuery UI datepicker
 - JQuery UI draggable och droppable (eller sortable)
 - JQuery UI dialog
