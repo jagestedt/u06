@@ -1,0 +1,20 @@
+{
+  "name": "u06-trello-clone-jagestedt",
+  "version": "1.0.0",
+  "description": "##Uppgiften I denna uppgift ska du bygga en applikation som fungerar som ett \"kanban-board\", likt t.ex. Trello.com. För denna uppgift är det endast frontend och ingen backend som ska implementeras. Se trello.com (Länkar till en externa sida.)Länkar till en externa sida. för att få grepp om hur det ska fungera.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chas-academy/u06-trello-clone-jagestedt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chas-academy/u06-trello-clone-jagestedt/issues"
+  },
+  "homepage": "https://github.com/chas-academy/u06-trello-clone-jagestedt#readme"
+}
