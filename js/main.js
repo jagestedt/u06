@@ -1,5 +1,5 @@
 $(() => {
-  console.log('jQuery rdy');
+  console.log('jQ rdy');
 });
 
 // $(function() => {
@@ -7,5 +7,10 @@ $(() => {
 // });
 
 $(function () {
-  $('.card').draggable();
+  $('.sortable').sortable();
+  $('.sortable').disableSelection();
 });
+
+// $(function () {
+//   $('.card').tabs();
+// });
