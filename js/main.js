@@ -2,15 +2,10 @@ $(() => {
   console.log('jQ rdy');
 });
 
-// $(function() => {
-
-// });
-
 $(function () {
-  $('.sortable').sortable();
-  $('.sortable').disableSelection();
+  $('#sortable1, #sortable2, #sortable3')
+    .sortable({
+      connectWith: '.connectedSortable',
+    })
+    .disableSelection();
 });
-
-// $(function () {
-//   $('.card').tabs();
-// });
