@@ -21,7 +21,8 @@ Som användare ska man kunna göra följande:
 - Kunna klicka på ett kort för att se dess information (dialog)
 - Kunna titta i olika flikar inom ett kort för att få mer information om det (tabs)
 - Kunna sätta en deadline på varje kort (datepicker)
-- ##Krav
+
+# Krav
 
 ## Den färdiga lösningen måste implementera:
 
