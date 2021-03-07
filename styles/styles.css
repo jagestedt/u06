@@ -3,3 +3,8 @@
   /* background-color: white; */
   /* background-color: wheat; */
 }
+
+#dialog[title=] {
+  background-color: #222;
+  display: flex;
+}
