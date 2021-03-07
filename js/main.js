@@ -48,3 +48,8 @@ $(function () {
     $('#dialog-2').dialog('open');
   });
 });
+
+// TABS
+$(function () {
+  $('#tabs').tabs();
+});

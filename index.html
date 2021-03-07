@@ -35,9 +35,12 @@
       <section class="border column has-background-danger p-1 m-1">
         <h2 class="title is-5">To-do</h2>
         <ul id="sortable1" class="connectedSortable">
+ 
+          <!-- CARD 1 -->
           <li id="task-1" class="p-2 m-2 card-background"><h3 class="title is-6">Item 1</h3>
             <button id="opener-1" class="button">Details</button>
           </li>
+          <!-- END CARD 1 -->
           <li id="task-2" class="p-2 m-2 card-background"><h3 class="title is-6">Item 2</h3>
             <button id="opener-2" class="button">Details</button>
           </li>
@@ -55,7 +58,45 @@
       <section class="column has-background-primary p-1 m-1">
         <h2 class="title is-5">Doing</h2>
         <ul id="sortable2" class="connectedSortable">
-          <li class="">Item 1</li>
+          <!-- CARD 1 -->
+          <li class="p-2 m-2 card-background"><h3 class="title is-6">Item 1</h3>
+            <!-- TABS --> 
+            <div id="tabs" class="tabs my-tabs">
+              <ul>
+                <li><a href="#tabs-1">First Man</a></li>
+                <li><a href="#tabs-2">Second breakfast</a></li>
+                <li><a href="#tabs-3">Third Man</a></li>
+              </ul>
+              <section id="tabs-1" class="has-background-success p-2">
+                <p>1</p>
+              </section>
+              <section id="tabs-2" class="has-background-primary p-2">
+                <p>2</p>
+              </section>
+              <section id="tabs-3" class="has-background-warning p-2">
+                <p>3</p>
+              </section>
+            </div>
+            <!-- <div id="tabs" class="tabs">
+              <ul class="tab-headings has-background-dark">
+                <li><a href="#tabs-1">Nunc tincidunt</a></li>
+                <li><a href="#tabs-2">Proin dolor</a></li>
+                <li><a href="#tabs-3">Aenean lacinia</a></li>
+              </ul>
+              <div id="tabs-1">
+                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris.</p>
+              </div>
+              <div id="tabs-2">
+                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc.</p>
+              </div>
+              <div id="tabs-3">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante.</p>
+              </div>
+            </div> -->
+
+            <button class="button">Details</button>
+          </li>
+          <!-- END CARD 1 -->
           <li class="">Item 2</li>
           <li class="">Item 3</li>
           <li class="">Item 4</li>
