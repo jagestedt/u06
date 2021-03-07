@@ -11,12 +11,13 @@
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <script src="https://kit.fontawesome.com/351ec2fcca.js" crossorigin="anonymous"></script>
     <!-- custom js -->
     <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
       <div class="container">
-		<h1 class="title">Kan-ban</h1>
+		<h1 class="title">Kan-ban <i class="fas fa-chevron-circle-left"></i></h1>
 		<p class="subtitle">My first website with <strong>Bulma and jQuery</strong>!</p>
         
         <!-- DIALOG -->
@@ -77,23 +78,12 @@
                 <p>3</p>
               </section>
             </div>
-            <!-- <div id="tabs" class="tabs">
-              <ul class="tab-headings has-background-dark">
-                <li><a href="#tabs-1">Nunc tincidunt</a></li>
-                <li><a href="#tabs-2">Proin dolor</a></li>
-                <li><a href="#tabs-3">Aenean lacinia</a></li>
-              </ul>
-              <div id="tabs-1">
-                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris.</p>
-              </div>
-              <div id="tabs-2">
-                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc.</p>
-              </div>
-              <div id="tabs-3">
-                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante.</p>
-              </div>
-            </div> -->
-
+            <label for="datepicker">Pick a deadline:</label> 
+            <input type="text" id="datepicker">
+            
+            
+            <p>Current deadline: <input class="has-text-dark mt-4 mb-4" type="text" id="deadline" size="30"></p>
+            
             <button class="button">Details</button>
           </li>
           <!-- END CARD 1 -->

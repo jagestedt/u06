@@ -53,3 +53,13 @@ $(function () {
 $(function () {
   $('#tabs').tabs();
 });
+
+// DATEPICKER
+$(function () {
+  $('#datepicker').datepicker({
+    altField: '#deadline',
+    altFormat: 'DD, d MM, yy',
+    showOtherMonths: true,
+    selectOtherMonths: false,
+  });
+});
