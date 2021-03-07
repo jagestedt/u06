@@ -36,6 +36,12 @@ input {
 /* Styles from shobitha dinsan*/
 /* https://stackoverflow.com/questions/25474378/how-to-style-jquery-datepicker-calendar */
 
+#ui-datepicker-div {
+  background-color: hsl(0, 0%, 7%);
+  height: auto;
+  padding: 1px;
+}
+
 .ui-datepicker {
   width: 300px;
   height: 300px;
@@ -48,11 +54,8 @@ input {
 }
 
 .ui-datepicker-header {
-  background: hsl(0, 0%, 21%);
+  /* background: hsl(0, 0%, 21%); */
   color: white;
-  border-width: 1px 0 0 0;
-  border-style: solid;
-  /* border-color: #111; */
 }
 
 .ui-datepicker-title {
@@ -62,19 +65,21 @@ input {
 }
 
 .ui-datepicker-prev {
+  padding-left: 1em;
   float: left;
   cursor: pointer;
-  background-position: center -30px;
+  /* background-position: center -30px; */
 }
 
 .ui-datepicker-next {
+  padding-right: 1em;
   float: right;
   cursor: pointer;
   background-position: center 0px;
 }
 
 .ui-datepicker thead {
-  background-color: #f7f7f7;
+  /* background-color: hsl(0, 0%, 86%); */
 
   /*border-bottom: 1px solid #bbb;*/
 }
@@ -84,8 +89,10 @@ input {
   text-transform: uppercase;
   font-size: 8pt;
   color: hsl(0, 0%, 86%);
-  /*text-shadow: 1px 0px 0px #fff;*/
-  /*filter: dropshadow(color=#fff, offx=1, offy=0);*/
+}
+
+.ui-datepicker th.ui-datepicker-week-end span {
+  margin-left: 0.2em;
 }
 
 .ui-datepicker tbody td {
@@ -120,10 +127,12 @@ input {
 }
 
 .ui-datepicker-calendar .ui-state-default {
-  background: hsl(0, 0%, 48%);
+  /* background: hsl(0, 0%, 48%); */
   color: white;
   height: 40px;
   width: 40px;
+  /* border: 1px solid hsl(0, 0%, 29%); */
+  border-top: none;
 }
 
 .ui-datepicker-calendar .ui-state-hover {
@@ -132,14 +141,14 @@ input {
 }
 
 .ui-datepicker-calendar .ui-state-active {
-  background: #33adff;
-  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  background: hsl(204, 86%, 53%);
+  /* -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  color: #e0e0e0;
-  text-shadow: 0px 1px 0px #4d7a85;
-  border: 1px solid #55838f;
-  position: relative;
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.1); */
+  color: white;
+  /* text-shadow: 0px 1px 0px #4d7a85; */
+  /* border: 1px solid #55838f; */
+  /* position: relative; */
   margin: -1px;
 }
 
