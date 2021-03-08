@@ -17,19 +17,19 @@ Observera att du inte bedöms på estetik eller design. Lägg därför minimalt 
 
 Som användare ska man kunna göra följande:
 
-- Kunna dra "kort" mellan tre olika "kolumner" (todo, doing, done)
-- Kunna klicka på ett kort för att se dess information (dialog)
-- Kunna titta i olika flikar inom ett kort för att få mer information om det (tabs)
-- Kunna sätta en deadline på varje kort (datepicker)
+- Kunna dra "kort" mellan tre olika "kolumner" (todo, doing, done) - DONE
+- Kunna klicka på ett kort för att se dess information (dialog) - DONE
+- Kunna titta i olika flikar inom ett kort för att få mer information om det (tabs) - DONE
+- Kunna sätta en deadline på varje kort (datepicker) - DONE
 
 # Krav
 
 ## Den färdiga lösningen måste implementera:
 
-- JQuery UI datepicker
-- JQuery UI draggable och droppable (eller sortable)
-- JQuery UI dialog
-- JQuery UI tabs
+- JQuery UI datepicker - DONE
+- JQuery UI draggable och droppable (eller sortable) - DONE
+- JQuery UI dialog - DONE
+- JQuery UI tabs - DONE
 - Minst två valfria effekter från JQuery UI
 - Minst en egenskapad enkel JQuery UI Widget
 - Layout/disposition helt skapad från CSS-ramverk (valfritt)
