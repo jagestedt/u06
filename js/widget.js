@@ -1,10 +1,16 @@
+// WIDGET
 $(function () {
-  $.widget('my.widget', {
-    // definiera inställningar
-    options: {},
-
-    // definiera logiken
-    _create: function () {},
+  $.widget('u06.testWidget', {
+    // default options
+    options: {
+      color: '#fff',
+      backgroundColor: '#000',
+    },
+    // constructor
+    _create: function () {
+      this.listItemElement.addClass('testWidget');
+      console.log($.u06);
+    },
 
     // sätt konfiguration efter init
     _setOption: function (key, value) {},
@@ -15,5 +21,10 @@ $(function () {
     // hur elementet som har widgeten applicerad på sig ska tas bort
 
     _destroy: function () {},
+  });
+
+  $('.widgetElement').myWidget({
+    backgroundColor: '#fff',
+    color: '#000',
   });
 });

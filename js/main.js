@@ -63,3 +63,39 @@ $(function () {
     selectOtherMonths: false,
   });
 });
+
+const heading = $('h1');
+// WIDGET
+$(function () {
+  $.widget('u06.testWidget', {
+    // default options
+    options: {
+      color: '#fff',
+      backgroundColor: '#000',
+      someValue: 0,
+    },
+    // constructor
+    _create: function () {
+      const someValue = `testing options: ${this.options.someValue}`;
+      this.element.addClass('testWidget').find('p').text(someValue);
+    },
+
+    // // sätt konfiguration efter init
+    // _setOption: function (key, value) {},
+
+    // // hur elementet vi kopplar vår widget på ska uppdateras
+    // _refresh: function () {},
+
+    // // hur elementet som har widgeten applicerad på sig ska tas bort
+
+    // _destroy: function () {},
+  });
+  console.log($.u06);
+
+  $('#chuckdiv').testWidget();
+
+  //   $('.widgetElement').myWidget({
+  //     backgroundColor: '#fff',
+  //     color: '#000',
+  //   });
+});
