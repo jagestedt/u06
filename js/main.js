@@ -1,18 +1,14 @@
 $(() => {
   console.log('jQ rdy');
-});
 
-// SORTABLE
-$(function () {
+  // SORTABLE
   $('#sortable1, #sortable2, #sortable3')
     .sortable({
       connectWith: '.connectedSortable',
     })
     .disableSelection();
-});
 
-// DIALOG 1
-$(function () {
+  // DIALOG 1
   $('#dialog-1').dialog({
     autoOpen: false,
     show: {
@@ -28,10 +24,8 @@ $(function () {
   $('#opener-1').on('click', function () {
     $('#dialog-1').dialog('open');
   });
-});
 
-// DIALOG 2
-$(function () {
+  // DIALOG 2
   $('#dialog-2').dialog({
     autoOpen: false,
     show: {
@@ -47,55 +41,63 @@ $(function () {
   $('#opener-2').on('click', function () {
     $('#dialog-2').dialog('open');
   });
-});
 
-// TABS
-$(function () {
+  // TABS
   $('#tabs').tabs();
-});
 
-// DATEPICKER
-$(function () {
+  // DATEPICKER
   $('#datepicker').datepicker({
     altField: '#deadline',
     altFormat: 'DD, d MM, yy',
     showOtherMonths: true,
     selectOtherMonths: false,
   });
-});
 
-const heading = $('h1');
-// WIDGET
-$(function () {
-  $.widget('u06.testWidget', {
-    // default options
+  // WIDGET
+  let taskCounterElement = $('.task-counter');
+  const ulElement = $('.task-list');
+  let listLength = ulElement.children().length;
+
+  $.widget('u06.taskCounter', {
     options: {
-      color: '#fff',
-      backgroundColor: '#000',
-      someValue: 0,
+      value: 0,
     },
-    // constructor
+
     _create: function () {
-      const someValue = `testing options: ${this.options.someValue}`;
-      this.element.addClass('testWidget').find('p').text(someValue);
+      this.element.addClass('taskCounter');
+      this._update();
     },
 
-    // // sätt konfiguration efter init
-    // _setOption: function (key, value) {},
+    _setOption: function (key, value) {
+      this.options[key] = value;
+      this._update();
+    },
+    // uppdaterar elementet
+    _update: function () {
+      const progress = `Contains: ${this.options.value} tasks`;
+      this.element.text(progress);
+      if (this.options.value === 100) {
+        this._trigger('complete', null, {value: 100});
+      }
+    },
 
-    // // hur elementet vi kopplar vår widget på ska uppdateras
-    // _refresh: function () {},
+    value: function (value) {
+      if (value === undefined) {
+        return this.options.value;
+      } else {
+        this.options.value = this._constrain(value);
+        this._update();
+      }
+    },
 
-    // // hur elementet som har widgeten applicerad på sig ska tas bort
-
-    // _destroy: function () {},
+    _destroy: function () {
+      this.element.removeClass('taskCounter').text('');
+    },
   });
-  console.log($.u06);
 
-  $('#chuckdiv').testWidget();
+  taskCounterElement = $('#task-counter').taskCounter({value: listLength});
 
-  //   $('.widgetElement').myWidget({
-  //     backgroundColor: '#fff',
-  //     color: '#000',
-  //   });
+  // taskCounterElement.taskCounter('value', 50);
+
+  console.log(listLength);
 });

@@ -6,7 +6,7 @@
     <title>Kan-ban!</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
-    <!-- <link rel="stylesheet" href="/styles/styles.css"> -->
+    <link rel="stylesheet" href="/styles/styles.css">
     <link rel="shortcut icon" href="styles/img/favicon.ico" type="image/x-icon" />
 
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -15,17 +15,11 @@
     <script src="https://kit.fontawesome.com/351ec2fcca.js" crossorigin="anonymous"></script>
     <!-- custom js -->
     <script type="text/javascript" src="js/main.js" async></script>
-    <!-- <script type="text/javascript" src="js/widget.js" async></script> -->
-    <!-- <script type="text/javascript" src="js/jquery.ui.myWidget.js" async></script> -->
   </head>
   <body>
       <div class="container">
 		<h1 class="title">Kan-ban <i class="fas fa-chevron-circle-left"></i></h1>
 		<p class="subtitle">My first website with <strong>Bulma and jQuery</strong>!</p>
-
-        <div id="chuckdiv">
-            <p></p>
-        </div>
         
         <!-- DIALOG -->
         <div id="dialog-1" class="has-background-light" title="Static dialog">
@@ -41,8 +35,11 @@
 
     <div class="columns has-background-dark m-1">
       <section class="border column has-background-danger p-1 m-1">
-        <h2 class="title is-5">To-do</h2>
-        <ul id="sortable1" class="connectedSortable">
+        <h2 class="title is-5">To-do: </h2>
+        <p id="task-counter">
+        <!-- <input type="number" name="display" id="display"> -->
+        </p>
+        <ul id="sortable1" class="connectedSortable task-list">
  
           <!-- CARD 1 -->
           <li id="task-1" class="p-2 m-2 card-background"><h3 class="title is-6">Item 1</h3>
