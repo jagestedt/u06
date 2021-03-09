@@ -1,6 +1,25 @@
 $(() => {
   console.log('jQ rdy');
 
+  //   function createCards() {
+  //     let numberOfCards = 5;
+  //     let num = [];
+  //     let dialogElement;
+  //     const dialogContainer = $('.dialog-container');
+
+  //     for (let i = 0; i < numberOfCards; i++) {
+  //       num += i;
+  //       dialogElement = `<div id="dialog-${i}" class="has-background-light" title="Static dialog">
+  //             <p class="dialog-text">Info about task ${i}</p>
+  //         </div>`;
+  //       dialogContainer.appendTo(dialogElement);
+  //       console.log(num + ', ');
+  //       console.log(dialogElement);
+  //     }
+  //     // expected output: "012345678"
+  //   }
+  //   createCards();
+
   // SORTABLE
   $('#sortable1, #sortable2, #sortable3')
     .sortable({
@@ -9,38 +28,66 @@ $(() => {
     .disableSelection();
 
   // DIALOG 1
-  $('#dialog-1').dialog({
-    autoOpen: false,
-    show: {
-      effect: 'fade',
-      duration: 200,
-    },
-    hide: {
-      effect: 'fade',
-      duration: 200,
-    },
-  });
+  let numberOfCards = $('.task-list').children().length;
+  console.log('numberOfCards: ' + numberOfCards);
 
-  $('#opener-1').on('click', function () {
-    $('#dialog-1').dialog('open');
-  });
+  function createDialogWidgets() {
+    let num = [];
+    for (let i = 0; i < numberOfCards + 1; i++) {
+      num += i;
+      $(`#dialog-${i}`).dialog({
+        autoOpen: false,
+        show: {
+          effect: 'fade',
+          duration: 200,
+        },
+        hide: {
+          effect: 'fade',
+          duration: 200,
+        },
+      });
 
-  // DIALOG 2
-  $('#dialog-2').dialog({
-    autoOpen: false,
-    show: {
-      effect: 'fade',
-      duration: 200,
-    },
-    hide: {
-      effect: 'fade',
-      duration: 200,
-    },
-  });
+      $(`#opener-${i}`).on('click', function () {
+        $(`#dialog-${i}`).dialog('open');
+      });
+    }
+    console.log(num);
+  }
 
-  $('#opener-2').on('click', function () {
-    $('#dialog-2').dialog('open');
-  });
+  createDialogWidgets();
+
+  //   $('#dialog-1').dialog({
+  //     autoOpen: false,
+  //     show: {
+  //       effect: 'fade',
+  //       duration: 200,
+  //     },
+  //     hide: {
+  //       effect: 'fade',
+  //       duration: 200,
+  //     },
+  //   });
+
+  //   $('#opener-1').on('click', function () {
+  //     $('#dialog-1').dialog('open');
+  //   });
+
+  //   // DIALOG 2
+  //   $('#dialog-2').dialog({
+  //     autoOpen: false,
+  //     show: {
+  //       effect: 'fade',
+  //       duration: 200,
+  //     },
+  //     hide: {
+  //       effect: 'fade',
+  //       duration: 200,
+  //     },
+  //   });
+
+  //   $('#opener-2').on('click', function () {
+  //     $('#dialog-2').dialog('open');
+  //   });
 
   // TABS
   $('#tabs').tabs();
@@ -54,13 +101,14 @@ $(() => {
   });
 
   // WIDGET
-  let taskCounterElement = $('.task-counter');
+  let taskCounterElement = $('#task-counter');
   const ulElement = $('.task-list');
   let listLength = ulElement.children().length;
+  //   console.log('outside: ' + listLength);
 
   $.widget('u06.taskCounter', {
     options: {
-      value: 0,
+      value: listLength,
     },
 
     _create: function () {
@@ -95,9 +143,7 @@ $(() => {
     },
   });
 
-  taskCounterElement = $('#task-counter').taskCounter({value: listLength});
-
-  // taskCounterElement.taskCounter('value', 50);
+  taskCounterElement.taskCounter({value: listLength});
 
   console.log(listLength);
 });
