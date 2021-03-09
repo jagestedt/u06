@@ -1,24 +1,24 @@
 $(() => {
   console.log('jQ rdy');
 
-  //   function createCards() {
-  //     let numberOfCards = 5;
-  //     let num = [];
-  //     let dialogElement;
-  //     const dialogContainer = $('.dialog-container');
+  function createDialogs() {
+    let numberOfCards = 5;
+    let num = [];
+    let dialogElement;
+    const dialogContainer = $('.dialog-container');
 
-  //     for (let i = 0; i < numberOfCards; i++) {
-  //       num += i;
-  //       dialogElement = `<div id="dialog-${i}" class="has-background-light" title="Static dialog">
-  //             <p class="dialog-text">Info about task ${i}</p>
-  //         </div>`;
-  //       dialogContainer.appendTo(dialogElement);
-  //       console.log(num + ', ');
-  //       console.log(dialogElement);
-  //     }
-  //     // expected output: "012345678"
-  //   }
-  //   createCards();
+    for (let i = 0; i < numberOfCards; i++) {
+      num += i;
+      dialogElement = `<div id="dialog-${i}" class="has-background-light" title="Static dialog">
+            <p class="dialog-text">Info about task ${i}</p>
+        </div>`;
+      dialogContainer.append(dialogElement);
+      console.log(dialogContainer);
+      console.log(dialogElement);
+    }
+    // expected output: "012345678"
+  }
+  createDialogs();
 
   // SORTABLE
   $('#sortable1, #sortable2, #sortable3')
@@ -55,39 +55,6 @@ $(() => {
   }
 
   createDialogWidgets();
-
-  //   $('#dialog-1').dialog({
-  //     autoOpen: false,
-  //     show: {
-  //       effect: 'fade',
-  //       duration: 200,
-  //     },
-  //     hide: {
-  //       effect: 'fade',
-  //       duration: 200,
-  //     },
-  //   });
-
-  //   $('#opener-1').on('click', function () {
-  //     $('#dialog-1').dialog('open');
-  //   });
-
-  //   // DIALOG 2
-  //   $('#dialog-2').dialog({
-  //     autoOpen: false,
-  //     show: {
-  //       effect: 'fade',
-  //       duration: 200,
-  //     },
-  //     hide: {
-  //       effect: 'fade',
-  //       duration: 200,
-  //     },
-  //   });
-
-  //   $('#opener-2').on('click', function () {
-  //     $('#dialog-2').dialog('open');
-  //   });
 
   // TABS
   $('#tabs').tabs();
