@@ -15,10 +15,11 @@
     <script src="https://kit.fontawesome.com/351ec2fcca.js" crossorigin="anonymous"></script>
     <!-- custom js -->
     <script type="text/javascript" src="js/main.js" async></script>
+    <!-- <script type="text/javascript" src="js/generate-html.js" async></script> -->
   </head>
   <body>
       <div class="container">
-		<h1 class="title">Kan-ban <i class="fas fa-chevron-circle-left"></i></h1>
+		<h1 class="title">Kan-ban</h1><input type="checkbox" name="theme-switch" id="theme-switch">
 		<p class="subtitle">My first website with <strong>Bulma and jQuery</strong>!</p>
         
         <div class="dialog-container"></div>
@@ -26,13 +27,13 @@
       <section class="border column has-background-danger p-1 m-1">
         <h2 class="title is-5">To-do: </h2>
 
-        <p id="task-counter" class="title is-3"></p>
+        <p id="task-counter" class="title is-5"></p>
 
         <ul id="todo" class="connectedSortable task-list">
  
           <!-- CARD 1 -->
-          <li id="task-1" class="p-2 m-2 card card-background"><h3 class="title is-6">Item 1</h3>
-            <button id="opener-1" class="button">Details</button>
+          <li id="task-1" class="p-2 m-2 card card-background"><h3 class="title is-6">Item 1</h3>            
+            <button id="opener-1" class="button btn" data-id="1">Details</button>
           </li>
           <!-- END CARD 1 -->
           <li id="task-2" class="p-2 m-2 card card-background"><h3 class="title is-6">Item 2</h3>
@@ -54,23 +55,6 @@
         <ul id="doing" class="connectedSortable">
           <!-- CARD 1 -->
           <li class="p-2 m-2 card card-background"><h3 class="title is-6">Item 1</h3>
-            <!-- TABS --> 
-            <div id="tabs" class="tabs my-tabs">
-              <ul>
-                <li><a href="#tabs-1">First Man</a></li>
-                <li><a href="#tabs-2">Second breakfast</a></li>
-                <li><a href="#tabs-3">Third Man</a></li>
-              </ul>
-              <section id="tabs-1" class="has-background-success p-2">
-                <p>1</p>
-              </section>
-              <section id="tabs-2" class="has-background-primary p-2">
-                <p>2</p>
-              </section>
-              <section id="tabs-3" class="has-background-warning p-2">
-                <p>3</p>
-              </section>
-            </div>
             <label for="datepicker">Pick a deadline:</label> 
             <input type="text" id="datepicker">
             <p>Current deadline: <input class="has-text-dark mt-4 mb-4" type="text" id="deadline" size="30"></p>

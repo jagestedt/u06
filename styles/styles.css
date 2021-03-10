@@ -4,7 +4,20 @@
   /* background-color: wheat; */
 }
 
-#dialog[title=] {
+.card {
+  /* width: 50%; */
+}
+
+.dark-mode {
+  font-family: monospace;
+  background-color: #222;
+}
+
+.dialog {
+  width: 500px;
+}
+
+.dialog[title=] {
   background-color: #222;
   display: flex;
 }
