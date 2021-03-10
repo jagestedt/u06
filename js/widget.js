@@ -77,9 +77,9 @@ $(() => {
     },
   });
 
-  const bar = $('#chuckdiv p').progressbar({value: 20});
+  const bar = $('#chuckdiv p');
 
-  bar.progressbar('value', 50);
+  //   bar.progressbar('value', 50);
 
   bar.progressbar({
     complete: function (event, data) {
@@ -87,5 +87,7 @@ $(() => {
     },
   });
 
-  bar.progressbar('value', 100);
+  bar.progressbar('value');
+  bar.progressbar('value', 50);
+  bar.progressbar('value', 75);
 });

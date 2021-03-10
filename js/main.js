@@ -13,7 +13,7 @@ $(() => {
   //   console.log('Contains: ' + numberOfCards + ' tasks');
 
   function createDialogWidgets() {
-    for (let i = 0; i < numberOfCards + 1; i++) {
+    for (let i = 0; i < numberOfCards; i++) {
       $(`#dialog-${i}`).dialog({
         autoOpen: false,
         show: {
@@ -35,7 +35,7 @@ $(() => {
   let dialogElement;
   const dialogContainer = $('.dialog-container');
 
-  for (let i = 0; i < numberOfCards + 1; i++) {
+  for (let i = 0; i < 6; i++) {
     dialogElement = `<div id="dialog-${i}" class="dialog has-background-light" title="Static dialog">
     <div id="tabs" class="tabs my-tabs">
               <ul>
@@ -54,38 +54,38 @@ $(() => {
     dialogContainer.append(dialogElement);
   }
 
-  //   $(function () {
-  //     $('.dialog').dialog({
-  //       autoOpen: false,
-  //       show: {
-  //         effect: 'fade',
-  //         duration: 200,
-  //       },
-  //       hide: {
-  //         effect: 'fade',
-  //         duration: 200,
-  //       },
-  //     });
-  //     $('.btn').on('click', function () {
-  //       let id = $(this).attr('data-id');
-  //       $(id).dialog('open');
-  //     });
-  //   });
+  $(function () {
+    $('.dialog').dialog({
+      autoOpen: false,
+      show: {
+        effect: 'fade',
+        duration: 200,
+      },
+      hide: {
+        effect: 'fade',
+        duration: 200,
+      },
+    });
+  });
 
   createDialogWidgets();
 
+  // $('.btn').on('click', function () {
+  //   let id = $(this).attr('data-id');
+  //   console.log(id);
+  //   $(id).dialog('open');
+  // });
   // TABS
   //   $('#tabs').tabs();
   $('.dialog').tabs();
 
-  for (let i = 1; i < 6; i++)
-    // DATEPICKER
-    $('#datepicker').datepicker({
-      altField: '#deadline',
-      altFormat: 'DD, d MM, yy',
-      showOtherMonths: true,
-      selectOtherMonths: false,
-    });
+  // DATEPICKER
+  $('#datepicker').datepicker({
+    altField: '#deadline',
+    altFormat: 'DD, d MM, yy',
+    showOtherMonths: true,
+    selectOtherMonths: false,
+  });
 
   // Generalisera, lägg till mouseup-event
   // WIDGET
@@ -93,13 +93,18 @@ $(() => {
   const ulElement = $('.task-list');
 
   $.widget('u06.taskCounter', {
+    // default
     options: {
       value: 0,
+      //   output: `Contains: ${listLength} tasks`,
+      output: $('.task-list').children().length + ' tasks',
+      x: console.log('options:' + $('.task-list').children().length),
     },
 
     _create: function () {
       this.element.addClass('taskCounter');
       this._update();
+      this._refresh();
     },
 
     _setOption: function (key, value) {
@@ -111,10 +116,23 @@ $(() => {
       console.log('update');
       $('.card').mouseup(function () {
         let listLength = ulElement.children().length;
-        const output = `Contains: ${listLength} tasks`;
+        const output = `${listLength} tasks`;
         console.log(output);
-        this.element.append(output);
+        taskCounterElement.text(output);
       });
+    },
+
+    value: function (value) {
+      if (value === undefined) {
+        return this.options.value;
+      } else {
+        this.options.value = this._constrain(value);
+        this._update();
+      }
+    },
+
+    _refresh: function () {
+      console.log('refresh');
     },
 
     _destroy: function () {
