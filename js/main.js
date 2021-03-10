@@ -1,40 +1,19 @@
 $(() => {
   console.log('jQ rdy');
 
-  function createDialogs() {
-    let numberOfCards = 5;
-    let num = [];
-    let dialogElement;
-    const dialogContainer = $('.dialog-container');
-
-    for (let i = 0; i < numberOfCards; i++) {
-      num += i;
-      dialogElement = `<div id="dialog-${i}" class="has-background-light" title="Static dialog">
-            <p class="dialog-text">Info about task ${i}</p>
-        </div>`;
-      dialogContainer.append(dialogElement);
-      console.log(dialogContainer);
-      console.log(dialogElement);
-    }
-    // expected output: "012345678"
-  }
-  createDialogs();
-
   // SORTABLE
-  $('#sortable1, #sortable2, #sortable3')
+  $('#todo, #doing, #done')
     .sortable({
       connectWith: '.connectedSortable',
     })
     .disableSelection();
 
-  // DIALOG 1
+  // DIALOG
   let numberOfCards = $('.task-list').children().length;
-  console.log('numberOfCards: ' + numberOfCards);
+  console.log(numberOfCards);
 
   function createDialogWidgets() {
-    let num = [];
     for (let i = 0; i < numberOfCards + 1; i++) {
-      num += i;
       $(`#dialog-${i}`).dialog({
         autoOpen: false,
         show: {
@@ -50,8 +29,18 @@ $(() => {
       $(`#opener-${i}`).on('click', function () {
         $(`#dialog-${i}`).dialog('open');
       });
+      console.log(i);
     }
-    console.log(num);
+  }
+  //   create dialog-html
+  let dialogElement;
+  const dialogContainer = $('.dialog-container');
+
+  for (let i = 0; i < numberOfCards + 1; i++) {
+    dialogElement = `<div id="dialog-${i}" class="has-background-light" title="Static dialog">
+            <p class="dialog-text">Info about task ${i}</p>
+        </div>`;
+    dialogContainer.append(dialogElement);
   }
 
   createDialogWidgets();
@@ -66,20 +55,24 @@ $(() => {
     showOtherMonths: true,
     selectOtherMonths: false,
   });
+  // Generalisera, lägg till mouseup-event
 
   // WIDGET
   let taskCounterElement = $('#task-counter');
   const ulElement = $('.task-list');
-  let listLength = ulElement.children().length;
-  //   console.log('outside: ' + listLength);
+
+  $('.card').mouseup(function () {
+    console.log('mouseUP');
+  });
 
   $.widget('u06.taskCounter', {
     options: {
-      value: listLength,
+      value: 0,
     },
 
     _create: function () {
       this.element.addClass('taskCounter');
+
       this._update();
     },
 
@@ -89,11 +82,9 @@ $(() => {
     },
     // uppdaterar elementet
     _update: function () {
-      const progress = `Contains: ${this.options.value} tasks`;
-      this.element.text(progress);
-      if (this.options.value === 100) {
-        this._trigger('complete', null, {value: 100});
-      }
+      let listLength = ulElement.children().length;
+      const text = `Contains: ${listLength} tasks`;
+      this.element.text(text);
     },
 
     value: function (value) {
@@ -110,7 +101,5 @@ $(() => {
     },
   });
 
-  taskCounterElement.taskCounter({value: listLength});
-
-  console.log(listLength);
+  taskCounterElement.taskCounter();
 });
