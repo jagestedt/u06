@@ -12,8 +12,9 @@ $(() => {
 
     // uppdaterar elementet
     update: function () {
+      console.log(this.element, 'update');
       const amountOfCards = $(this.element).find(this.options.countTarget).length; //kollar antalet .cards i elementet
-      console.log(this.element);
+      console.log(amountOfCards);
       $('.task-counter').text(`Contains ${amountOfCards} cards`);
     },
 
@@ -33,6 +34,7 @@ $(() => {
         console.log(event);
         console.log(ui);
         $.u06.taskCounter().update(); // kör update funktionen i din widget
+        // $.u06.taskCounter().update(); // kör update funktionen i din widget
       },
     })
     .disableSelection();
@@ -41,36 +43,36 @@ $(() => {
   for (let i = 1; i < 6; i++) {
     const dialogContainer = $('.dialog-container');
     let dialogElement = `<div id="dialog-${i}" class="dialog has-background-light" title="Static dialog">
-    <div id="tabs" class="tabs my-tabs">
-              <ul>
-                <li><a href="#tabs-1">First Man</a></li>
-                <li><a href="#tabs-2">Second breakfast</a></li>
-              </ul>
-              <section id="tabs-1" class="has-background-success p-2">
-                <p>1</p>
-              </section>
-              <section id="tabs-2" class="has-background-primary p-2">
-                <p>2</p>
-              </section>
-            </div>
-            <p class="dialog-text">Info about task ${i}</p>
+        <div id="tabs" class="tabs my-tabs">
+        <ul>
+        <li><a href="#tabs-1">First Man</a></li>
+        <li><a href="#tabs-2">Second breakfast</a></li>
+        </ul>
+        <section id="tabs-1" class="has-background-success p-2">
+        <p>1</p>
+        </section>
+        <section id="tabs-2" class="has-background-primary p-2">
+        <p>2</p>
+        </section>
+        </div>
+        <p class="dialog-text">Info about task ${i}</p>
         </div>`;
     dialogContainer.append(dialogElement);
   }
 
-  //   $(function () {
-  //     $('.dialog').dialog({
-  //       autoOpen: false,
-  //       show: {
-  //         effect: 'blind',
-  //         duration: 2000,
-  //       },
-  //       hide: {
-  //         effect: 'fade',
-  //         duration: 200,
-  //       },
-  //     });
-  //   });
+  $(function () {
+    $('.dialog').dialog({
+      autoOpen: false,
+      show: {
+        effect: 'blind',
+        duration: 2000,
+      },
+      hide: {
+        effect: 'fade',
+        duration: 200,
+      },
+    });
+  });
 
   //   createDialogWidgets();
 
