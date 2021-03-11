@@ -1,3 +1,17 @@
+.custom-colorize {
+  font-size: 20px;
+  position: relative;
+  width: 75px;
+  height: 75px;
+}
+.custom-colorize-changer {
+  font-size: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+/* -||--||--||--||--||--||--||--||--||--||- */
+
 .card-background {
   background-color: rgba(255, 255, 255, 0.35);
   /* background-color: white; */

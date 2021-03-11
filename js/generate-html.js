@@ -21,8 +21,9 @@ $(() => {
             <label for="datepicker-${i}">Pick a deadline:</label> 
             <input type="text" id="datepicker-${i}">
             <p>Current deadline: <input class="has-text-dark mt-4 mb-4" type="text" id="deadline-${i}" size="30"></p>
-            <button id="opener-${i}" class="button">Details</button>
+            <button id="opener-${i}" class="button btn" data-id="${i}">Details</button>
           </li>`;
+    console.log(i);
     list.append(cards);
   }
 });

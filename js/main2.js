@@ -1,67 +1,39 @@
 $(() => {
   console.log('jQ rdy');
 
-  // Generalisera, lägg till mouseup-event
-  // WIDGET
-  let taskCounterElement = $('#task-counter');
-  const ulElement = $('.task-list');
-  console.log(ulElement.children());
-
-  $.widget('u06.taskCounter', {
-    // default
-    options: {
-      defaultOutput: 5,
-    },
-
-    _create: function () {
-      console.log(this.element);
-      this.element.addClass('taskCounter');
-      let listLength = ulElement.children().length;
-      const output = `Contains ${listLength} tasks`;
-      $('#task-counter').text(output);
-      this._update();
-      this._refresh();
-    },
-    // uppdaterar elementet
-    _update: function () {
-      console.log('update');
-      $('.card').mouseup(function () {
-        listLength = ulElement.children().length;
-        // console.log(ulElement.children());
-        output = `Contains ${listLength} tasks`;
-        // console.log(output);
-        taskCounterElement.text(output);
-      });
-    },
-
-    // value: function (value) {
-    //   if (value === undefined) {
-    //     return this.options.value;
-    //   } else {
-    //     this.options.value = this._constrain(value);
-    //     this._update();
-    //   }
-    // },
-
-    _refresh: function () {
-      console.log('refresh');
-    },
-
-    _destroy: function () {
-      this.element.removeClass('taskCounter');
-    },
-  });
-
-  $('#task-counter').taskCounter();
-  //   taskCounterElement.taskCounter();
   // SORTABLE
   $('#todo, #doing, #done')
     .sortable({
       connectWith: '.connectedSortable',
     })
     .disableSelection();
-  // .taskCounter();
-  // create dialog-elements
+
+  // DIALOG
+  let numberOfCards = $('.task-list').children().length;
+  //   console.log('Contains: ' + numberOfCards + ' tasks');
+
+  //   function createDialogWidgets() {
+  //     for (let i = 0; i < numberOfCards; i++) {
+  // $(`#dialog-${i}`).dialog({
+  //   autoOpen: false,
+  //   show: {
+  //     effect: 'fade',
+  //     duration: 200,
+  //   },
+  //   hide: {
+  //     effect: 'fade',
+  //     duration: 200,
+  //   },
+  // });
+  // $(`#opener-${i}`).on('click', function () {
+  //   $(`#dialog-${i}`).dialog('open');
+  // });
+  //       console.log(i);
+  //     }
+  //   }
+  //   create dialog-html
+  //   let dialogElement;
+
   for (let i = 0; i < 6; i++) {
     const dialogContainer = $('.dialog-container');
     let dialogElement = `<div id="dialog-${i}" class="dialog has-background-light" title="Static dialog">
@@ -130,10 +102,81 @@ $(() => {
     selectOtherMonths: false,
   });
 
-  //   taskCounterElement.taskCounter();
+  // Generalisera, lägg till mouseup-event
+  // WIDGET
+  let taskCounterElement = $('#task-counter');
+  const ulElement = $('.task-list');
+  //   console.log(ulElement.children());
+
+  $.widget('u06.taskCounter', {
+    // default
+    options: {
+      defaultOutput: $('.task-list').children().length + ' tasks',
+      x: console.log('options:' + $('.task-list').children().length),
+    },
+
+    _create: function () {
+      this.element.addClass('taskCounter');
+      this._update();
+      this._refresh();
+    },
+
+    _setOption: function (key, value) {
+      this.options[key] = value;
+      this._update();
+    },
+    // uppdaterar elementet
+    _update: function () {
+      console.log('update');
+      $('.card').mouseup(function () {
+        let listLength = ulElement.children().length;
+        // console.log(ulElement.children());
+        const output = `${listLength} tasks`;
+        // console.log(output);
+        taskCounterElement.text(output);
+      });
+    },
+
+    value: function (value) {
+      if (value === undefined) {
+        return this.options.value;
+      } else {
+        this.options.value = this._constrain(value);
+        this._update();
+      }
+    },
+
+    _refresh: function () {
+      console.log('refresh');
+    },
+
+    _destroy: function () {
+      this.element.removeClass('taskCounter');
+    },
+  });
+
+  taskCounterElement.taskCounter();
 });
 //   let taskCounterElement = $('#task-counter');
 //   const ulElement = $('.task-list');
+
+//   $('#theme-switch').click(() => {
+//     if ($(this).prop('checked') == true) {
+//       console.log('checked');
+//     } else {
+//       console.log('un-checked');
+//     }
+//   });
+
+//   $('#theme-switch').click(function () {
+//     if ($(this).prop('checked') == true) {
+//       console.log('Checkbox is checked.');
+//       $('body').addClass('dark-mode');
+//     } else {
+//       console.log('Checkbox is unchecked.');
+//       $('body').removeClass('dark-mode');
+//     }
+//   });
 
 //   //   $('.card').mouseup().taskCounter();
 
