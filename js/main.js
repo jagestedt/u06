@@ -38,7 +38,7 @@ $(() => {
     .disableSelection();
   // .taskCounter();
   // create dialog-elements
-  for (let i = 0; i < 6; i++) {
+  for (let i = 1; i < 6; i++) {
     const dialogContainer = $('.dialog-container');
     let dialogElement = `<div id="dialog-${i}" class="dialog has-background-light" title="Static dialog">
     <div id="tabs" class="tabs my-tabs">
@@ -58,19 +58,19 @@ $(() => {
     dialogContainer.append(dialogElement);
   }
 
-  $(function () {
-    $('.dialog').dialog({
-      autoOpen: false,
-      show: {
-        effect: 'fade',
-        duration: 200,
-      },
-      hide: {
-        effect: 'fade',
-        duration: 200,
-      },
-    });
-  });
+  //   $(function () {
+  //     $('.dialog').dialog({
+  //       autoOpen: false,
+  //       show: {
+  //         effect: 'blind',
+  //         duration: 2000,
+  //       },
+  //       hide: {
+  //         effect: 'fade',
+  //         duration: 200,
+  //       },
+  //     });
+  //   });
 
   //   createDialogWidgets();
 
@@ -79,7 +79,7 @@ $(() => {
     $(`#dialog-${id}`).dialog({
       autoOpen: false,
       show: {
-        effect: 'fade',
+        effect: 'blind',
         duration: 200,
       },
       hide: {
@@ -91,7 +91,7 @@ $(() => {
       $(`#dialog-${id}`).dialog('open');
     });
     console.log('data-id = ' + id);
-    // $(id).dialog('open');
+    $(id).dialog('open');
   });
 
   // TABS
