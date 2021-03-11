@@ -1,20 +1,22 @@
 $(() => {
   console.log('jQ rdy');
-
   // Generalisera, lägg till mouseup-event
   // WIDGET
   $.widget('u06.taskCounter', {
     _create: function () {
-      const amountOfCards = $(this.element).find(this.options.countTarget).length; //kollar antalet .cards i elementet
-      console.log(this.element, 'create');
-      $('.task-counter').text(`Contains ${amountOfCards} cards`);
+      //   const amountOfCards = $(this.element).find(this.options.countTarget).length; //kollar antalet .cards i elementet
+      //   console.log(this.element, 'create');
+      //   $('.task-counter').text(`Contains ${amountOfCards} cards`);
+      this._update();
     },
 
     // uppdaterar elementet
-    update: function () {
+    _update: function () {
+      console.log('update');
+
+      //   console.log('kort draget');
       console.log(this.element, 'update');
       const amountOfCards = $(this.element).find(this.options.countTarget).length; //kollar antalet .cards i elementet
-      console.log(amountOfCards);
       $('.task-counter').text(`Contains ${amountOfCards} cards`);
     },
 
@@ -31,14 +33,25 @@ $(() => {
     .sortable({
       connectWith: '.connectedSortable',
       update: function (event, ui) {
-        console.log(event);
-        console.log(ui);
-        $.u06.taskCounter().update(); // kör update funktionen i din widget
+        // console.log(event);
+        // console.log(ui);
+        // console.log($('section.has-background-danger').find('.card').length, 'sortable');
+        // $.u06.taskCounter('update'); // kör update funktionen i din widget
         // $.u06.taskCounter().update(); // kör update funktionen i din widget
+        $.u06.taskCounter(); // kör update funktionen i din widget
       },
     })
     .disableSelection();
-  // .taskCounter();
+
+  $('#info-toggle').click(function () {
+    $('#info').slideDown();
+    $('#info-toggle').prop('disabled', true);
+  });
+
+  $('#info-hide-btn').click(function () {
+    $('#info').fadeOut();
+    $('#info-toggle').prop('disabled', false);
+  });
   // create dialog-elements
   for (let i = 1; i < 6; i++) {
     const dialogContainer = $('.dialog-container');
@@ -68,8 +81,8 @@ $(() => {
         duration: 2000,
       },
       hide: {
-        effect: 'fade',
-        duration: 200,
+        effect: 'fold',
+        duration: 4000,
       },
     });
   });
@@ -85,7 +98,7 @@ $(() => {
         duration: 200,
       },
       hide: {
-        effect: 'fade',
+        effect: 'fold',
         duration: 200,
       },
     });
