@@ -3,48 +3,18 @@ $(() => {
 
   // Generalisera, lägg till mouseup-event
   // WIDGET
-  let taskCounterElement = $('#task-counter');
-  const ulElement = $('.task-list');
-  console.log(ulElement.children());
-
   $.widget('u06.taskCounter', {
-    // default
-    options: {
-      defaultOutput: 5,
-    },
-
     _create: function () {
-      console.log(this.element);
-      this.element.addClass('taskCounter');
-      let listLength = ulElement.children().length;
-      const output = `Contains ${listLength} tasks`;
-      $('#task-counter').text(output);
-      this._update();
-      this._refresh();
+      const amountOfCards = $(this.element).find(this.options.countTarget).length; //kollar antalet .cards i elementet
+      console.log(this.element, 'create');
+      $('.task-counter').text(`Contains ${amountOfCards} cards`);
     },
+
     // uppdaterar elementet
-    _update: function () {
-      console.log('update');
-      $('.card').mouseup(function () {
-        listLength = ulElement.children().length;
-        // console.log(ulElement.children());
-        output = `Contains ${listLength} tasks`;
-        // console.log(output);
-        taskCounterElement.text(output);
-      });
-    },
-
-    // value: function (value) {
-    //   if (value === undefined) {
-    //     return this.options.value;
-    //   } else {
-    //     this.options.value = this._constrain(value);
-    //     this._update();
-    //   }
-    // },
-
-    _refresh: function () {
-      console.log('refresh');
+    update: function () {
+      const amountOfCards = $(this.element).find(this.options.countTarget).length; //kollar antalet .cards i elementet
+      console.log(this.element);
+      $('.task-counter').text(`Contains ${amountOfCards} cards`);
     },
 
     _destroy: function () {
@@ -52,12 +22,18 @@ $(() => {
     },
   });
 
-  $('#task-counter').taskCounter();
+  $('section.has-background-danger').taskCounter({countTarget: '.card'});
+
   //   taskCounterElement.taskCounter();
   // SORTABLE
   $('#todo, #doing, #done')
     .sortable({
       connectWith: '.connectedSortable',
+      update: function (event, ui) {
+        console.log(event);
+        console.log(ui);
+        $.u06.taskCounter().update(); // kör update funktionen i din widget
+      },
     })
     .disableSelection();
   // .taskCounter();
